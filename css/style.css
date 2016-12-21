@@ -1,0 +1,151 @@
+html, body {
+	width: 100%;
+	/*height: 97%;*/
+	/*margin-bottom: 0;*/
+}
+
+main {
+	width: 100%;
+	background-color: #eceff1;
+}
+
+.row {
+	margin-bottom: 0;
+}
+
+.vis {
+	padding : 0.2em;
+}
+
+/*.tw {
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+}*/
+
+.content2.row {
+	padding-bottom: 20px;
+}
+
+.head {
+	margin: 0 1em;
+	/*padding-top: 1em;*/
+	font-family: 'New Rocker', cursive;
+	font-size: 3.5em;
+	border-bottom: 3px solid #4B4966;
+	color: #4B4966;
+}
+
+.subhead {
+	margin: 0 4em;
+	margin-bottom: 1em;
+}
+
+div.subhead p {
+	margin:0;
+	padding: 0;
+	font-family: 'Raleway',sans-serif;
+	color: #4B4966;
+	border-bottom: 1px solid #4B4966;
+}
+
+div.dtwe {
+	/*border: 1px solid #000;*/
+	/*font-size: 0.2em;*/
+	border: 1px solid #D3CDD7;
+	border-radius: 10px;
+	margin-bottom: 5px;
+	background-color: #fff;
+	color: steelblue;
+}
+
+.dtwe p {
+	margin:0;
+	padding: 0;
+	font-family: 'Raleway',sans-serif;
+}
+
+.dtwe p .one {
+	font-style: italic;
+}
+
+.dtwe p .two {
+	font-weight: bolder;
+}
+
+.dtwe img {
+	margin: 10px 0;
+    padding: 5px 0;
+}
+
+svg .red-bar {
+	fill: #00b0ff;
+	opacity: 0.2;
+}
+
+svg .blue-bar {
+	fill: #00b0ff;
+	opacity: 0.7;
+}
+
+svg .max-bar{
+	fill: #00b0ff;
+	opacity: 0.7;
+}
+
+text , .collection{
+	font-family: 'Raleway',sans-serif;
+	color: #4B4966;
+}
+
+.collection p{
+	font-family: 'Raleway',sans-serif;
+	color: #00b0ff;
+	font-size: 2em;
+	margin: 0;
+}
+
+.dot {
+	fill: #00b0ff;
+	opacity: 0.7;
+}
+
+.d3-tip{
+	text-align: center;
+    line-height: 1;
+    font-size: 0.7em;
+    padding: .3em ;
+    background: #5e42a6;
+    color: #fff;
+    border-radius: 5px;
+    opacity: 0.8;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: #5e42a6;
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+    opacity: 0.8;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+}
+
+.collection .collection-item {
+	/*align-content: left;*/
+	/*border-bottom: 0; */
+}
+
+.fa-twitter {
+	color: #00b0ff;
+}
