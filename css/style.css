@@ -1,12 +1,38 @@
 html, body {
 	width: 100%;
-	/*height: 97%;*/
-	/*margin-bottom: 0;*/
+	margin-bottom: 0;
+}
+
+body {
+	background-color: #eceff1;
+}
+
+.loader {
+	position:fixed;
+    top: 45%;
+    left: 45%;
+  	border: 16px solid #f3f3f3;
+  	border-radius: 50%;
+  	border-top: 16px solid #3498db;
+  	width: 100px;
+  	height: 100px;
+    -webkit-animation: spin 2s linear infinite;
+  	animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  	0% { -webkit-transform: rotate(0deg); }
+  	100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  	0% { transform: rotate(0deg); }
+  	100% { transform: rotate(360deg); }
 }
 
 main {
+	opacity: 0;
 	width: 100%;
-	background-color: #eceff1;
 }
 
 .row {
@@ -22,16 +48,15 @@ main {
 	border-right: 1px solid #000;
 }*/
 
-.content2.row {
+/*.content2.row {
 	padding-bottom: 20px;
-}
+}*/
 
 .head {
 	margin: 0 1em;
 	/*padding-top: 1em;*/
 	font-family: 'New Rocker', cursive;
 	font-size: 3.5em;
-	border-bottom: 3px solid #4B4966;
 	color: #4B4966;
 }
 
@@ -45,7 +70,7 @@ div.subhead p {
 	padding: 0;
 	font-family: 'Raleway',sans-serif;
 	color: #4B4966;
-	border-bottom: 1px solid #4B4966;
+	border-bottom: 0.7px solid #4B4966;
 }
 
 div.dtwe {
@@ -79,17 +104,7 @@ div.dtwe {
 
 svg .red-bar {
 	fill: #00b0ff;
-	opacity: 0.2;
-}
-
-svg .blue-bar {
-	fill: #00b0ff;
-	opacity: 0.7;
-}
-
-svg .max-bar{
-	fill: #00b0ff;
-	opacity: 0.7;
+	opacity: 0.5;
 }
 
 text , .collection{
@@ -141,11 +156,22 @@ text , .collection{
     left: 0;
 }
 
+.collection {
+	margin-top: 0;
+	border: 1px solid #D3CDD7;
+	border-radius: 10px;
+}
+
 .collection .collection-item {
 	/*align-content: left;*/
-	/*border-bottom: 0; */
+	border-bottom: 0; 
 }
 
 .fa-twitter {
 	color: #00b0ff;
 }
+
+.ins {
+	border-left: 1px solid #D3CDD7;
+}
+

@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
 		var tipbar = d3.tip()
             .attr('class', 'd3-tip')
             .offset([-10, 0])
@@ -208,7 +207,7 @@ $(document).ready(function(){
 	    svg.append("text")
 		    .attr("class", "x label")
 		    .attr("text-anchor", "end")
-		    .attr("x", width/2)
+		    .attr("x", width/1.7)
 		    .attr("y", 10)
 		    .html("Time of the day &#8594");
 
@@ -221,20 +220,20 @@ $(document).ready(function(){
 		    .attr("transform", "rotate(-90)")
 		    .html("Tweet Count &#8594;");
 
-		svg.append("line")
-			.attr("stroke" , "#4B4966")
-			.attr("stroke-width" , 0.5)
-		    .attr("x1", 0)
-		    .attr("y1", y(meanVal))
-		    .attr("x2", width-margin.right)
-		    .attr("y2", y(meanVal))
-		    .on('mouseover', tipbar.show)
-			.on('mouseout', tipbar.hide)
+		// svg.append("line")
+		// 	.attr("stroke" , "#4B4966")
+		// 	.attr("stroke-width" , 0.5)
+		//     .attr("x1", 0)
+		//     .attr("y1", y(meanVal))
+		//     .attr("x2", width-margin.right)
+		//     .attr("y2", y(meanVal))
+		//     .on('mouseover', tipbar.show)
+		// 	.on('mouseout', tipbar.hide)
 
 	    var bars =  svg.selectAll('.bar')
 	    				.data(timecount)
 	    				.enter().append('rect')
-	    				.attr("class" , function(d) { return d.val == maxVal ? "max-bar bar" : (d.val > meanVal ? "blue-bar bar" : "red-bar bar")})
+	    				.attr("class" , function(d) { return "red-bar bar"})
 	    				.attr("x" , function(d){return x(d.key);})
 			              .attr("y" , function(d){return y(d.val);})
 			              .attr("width" , function(d){return x.rangeBand();})
@@ -281,15 +280,15 @@ $(document).ready(function(){
 
 		x2 = d3.scale.log()
 			.base(10)
-            .domain([1 , d3.max(userinfo , function(d){return d.fol;})]).nice()
+            .domain([1 , d3.max(userinfo , function(d){return d.fol;})])//.nice()
             .range([0, width2]);
 
 	    rad = d3.scale.linear()
-	            .domain([0,d3.max(userinfo , function(d){return d.values;})]).nice()
+	            .domain([0,d3.max(userinfo , function(d){return d.values;})])//.nice()
 	            .range([1, height2/6]);
 
 	    y2 = d3.scale.linear()
-	    		.domain([0,1])
+	    		.domain([-0.2,1.2])
 	    		.range([height2 , 0]);
 
 	    xAxis2 = d3.svg.axis()
@@ -321,8 +320,8 @@ $(document).ready(function(){
 	    svg2.append("text")
 		    .attr("class", "x label")
 		    .attr("text-anchor", "end")
-		    .attr("x", width2/2)
-		    .attr("y", height2 + 25)
+		    .attr("x", width2/1.8)
+		    .attr("y", height2 + 30)
 		    .html("Reach of Twitterati &#8594");
 
 		svg2.append("text")
@@ -330,20 +329,23 @@ $(document).ready(function(){
 		    .attr("font-size" , "0.7em")
 		    .attr("text-anchor", "end")
 		    .attr("x", width2)
-		    .attr("y", 15)
-		    .html("**Size of bubble depicts reach of tweet by the twitterati");
+		    .attr("y", 0)
+		    .html("**Size of bubble depicts reach of tweets by the twitterati");
 
 	    var circles =  svg2.selectAll('.dot')
 	    				.data(userinfo)
 	    				.enter().append('circle')
 	    				.attr("class" , "dot")
 	    				.attr("r", function(d) {return rad(d.values);})
-				      	.attr("cy", function(d) {return y2(Math.random() * 0.8)+0.3;})
+				      	.attr("cy", function(d) {return y2(Math.random());})
 				      	.attr("cx", function(d) {return x2(d.fol);})
 			            .on('mouseover', tipdot.show)
         				.on('mouseout', tipdot.hide)
 
 	});
-
 });
-		
+
+window.onload = function () { 
+	d3.select('main').style("opacity" , 1);
+	d3.select('.loader').style("opacity" , 0);
+}
